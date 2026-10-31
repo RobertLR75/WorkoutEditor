@@ -1,0 +1,48 @@
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 2
+
+[*.{json,jsonc,yml,yaml}]
+indent_size = 2
+
+[*.md]
+trim_trailing_whitespace = false
+
+[*.py]
+indent_size = 4
+
+# C# naming rules; semantic/domain names remain part of code review.
+[*.cs]
+dotnet_diagnostic.IDE1006.severity = error
+dotnet_naming_rule.interfaces.symbols = interfaces
+dotnet_naming_rule.interfaces.style = interface_style
+dotnet_naming_rule.interfaces.severity = error
+dotnet_naming_symbols.interfaces.applicable_kinds = interface
+dotnet_naming_style.interface_style.required_prefix = I
+dotnet_naming_style.interface_style.capitalization = pascal_case
+dotnet_naming_rule.public_names.symbols = public_names
+dotnet_naming_rule.public_names.style = pascal_style
+dotnet_naming_rule.public_names.severity = error
+dotnet_naming_symbols.public_names.applicable_kinds = class, struct, enum, delegate, method, property, event
+dotnet_naming_style.pascal_style.capitalization = pascal_case
+dotnet_naming_rule.fields.symbols = fields
+dotnet_naming_rule.fields.style = camel_style
+dotnet_naming_rule.fields.severity = error
+dotnet_naming_symbols.fields.applicable_kinds = field
+dotnet_naming_style.camel_style.capitalization = camel_case
+dotnet_naming_rule.constants.symbols = constants
+dotnet_naming_rule.constants.style = pascal_style
+dotnet_naming_rule.constants.severity = error
+dotnet_naming_symbols.constants.applicable_kinds = field, local
+dotnet_naming_symbols.constants.required_modifiers = const
+dotnet_naming_rule.static_readonly.symbols = static_readonly
+dotnet_naming_rule.static_readonly.style = pascal_style
+dotnet_naming_rule.static_readonly.severity = error
+dotnet_naming_symbols.static_readonly.applicable_kinds = field
+dotnet_naming_symbols.static_readonly.required_modifiers = static, readonly
